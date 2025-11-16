@@ -106,7 +106,7 @@ class _RegisterForm extends StatelessWidget {
             width: double.infinity,
             height: 60,
             child: CustomFilledButton(
-              text: 'Crear',
+              text: Text('Crear nuevo usuario'),
               buttonColor: Colors.black,
               onPressed: (){
 

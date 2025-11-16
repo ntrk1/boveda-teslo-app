@@ -1,0 +1,35 @@
+
+
+DATATSOURCES/LOGIN_DATASOURCE.DART
+1//DIO
+- final dio con baseUrl
+2//class extends
+- crear los overrides
+- @login implementar TRY con post:data de dio ON-CATCH con DioException
+y CATCH con AUTH_ERRORS
+- @checkStatus  implementar TRY con get:headers de dio ON-CATCH con DioException
+y CATCH con AUTH_ERRORS
+
+
+
+
+
+
+
+REPOSITORIES/AUTH_REPOSITORY_IMPL.DART
+//class extends
+- crear los overrides y asociar con domain/datasource
+
+
+
+MAPPERS/USER_MAPPEER.DART
+//class 
+- estatica entity funcion con Map<String, dynamic> json => User
+
+ERRORS/AUTH_ERRORS
+//class WrongCredentials
+//class InvalidToken
+//class ConnectionTimeout
+//class CustomError
+- final message, errorCode
+- CTT

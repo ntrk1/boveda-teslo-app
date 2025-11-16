@@ -9,6 +9,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final TextInputType? keyboardType;
   final Function(String)? onChanged;
+  final Function(String)? onFieldSubmitted;
   final String? Function(String?)? validator;
 
   const CustomTextFormField({
@@ -20,6 +21,7 @@ class CustomTextFormField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.onChanged, 
     this.validator, 
+    this.onFieldSubmitted
   });
 
   @override
@@ -32,22 +34,23 @@ class CustomTextFormField extends StatelessWidget {
       borderRadius: BorderRadius.circular(40)
     );
 
-    const borderRadius = Radius.circular(15);
+    final borderRadius = BorderRadius.circular(15);
 
     return Container(
       // padding: const EdgeInsets.only(bottom: 0, top: 15),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: const BorderRadius.only(topLeft: borderRadius, bottomLeft: borderRadius, bottomRight: borderRadius ),
+        borderRadius: borderRadius,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(),
+            color: Colors.black54,
             blurRadius: 10,
             offset: const Offset(0,5)
           )
         ]
       ),
       child: TextFormField(
+        onFieldSubmitted: onFieldSubmitted,
         onChanged: onChanged,
         validator: validator,
         obscureText: obscureText,
@@ -57,8 +60,9 @@ class CustomTextFormField extends StatelessWidget {
           floatingLabelStyle: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
           enabledBorder: border,
           focusedBorder: border,
-          errorBorder: border.copyWith( borderSide: BorderSide( color: Colors.red.shade800 )),
-          focusedErrorBorder: border.copyWith( borderSide: BorderSide( color: Colors.red.shade800 )),
+          errorBorder: border,
+          focusedErrorBorder: border.copyWith( borderSide: BorderSide( color: Colors.red.shade800 ),
+          borderRadius: borderRadius),
           isDense: true,
           label: label != null ? Text(label!) : null,
           hintText: hint,

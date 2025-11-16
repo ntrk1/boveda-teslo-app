@@ -1,0 +1,103 @@
+DOMAIN
+//DATASOURCES/REPOSITORIES
+- futura lista entity con {limit, offset}
+- futura entity con id
+- futura lista entity con term
+- futura entity con Map<String, dynamic>
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------
+INFRASTUCTURE
+//ERRORS/PRODUCTS_ERRORS.DART
+- class NotFound
+
+
+
+//DATASOURCES/IMPL
+- final accesToken, late dio
+- CTT, iniciar DIO
+- BYPAGE, finals response.get y products
+mapper aplicado en ciclo FOR-IN
+- BYID, TRY de response.get, product 
+ON-CATCH DioException
+CATCH Exception
+- createUpdate, 
+
+
+
+
+---------------------------------------------------------------
+PRESENTATION
+//PROVIDER/PRODUCT_RESPOSITORY_PROVIDER.DART
+- PROVIDER, final accesToken watch de authprovider
+
+
+////PROVIDER/EPI_PRODUCT_PROVIDER.DART
+//class State con copyWith
+- finals isLasPage, limit, offset, isLoading, products
+//class Notifier
+- final inyeccion de ProductRepositoy
+- CTT, contructor para funcion loadNextPage
+- futura asincrona, aplicar las condiciones para cargar la pagina usando
+IF-COPYWITH
+//STNP
+- final wathc, inyectar repositoryProvider
+
+
+
+//SCREENS/EPI_PRODUCTS_SCREEN
+- _ProductsView a STF y consumer
+- final ScrollController
+- initState, productsProvider llamando a loadNextPage
+- return Padding symetric, MasonryGridView.count, 
+GestureDetector, ontap, productCard
+
+
+//WIDGETS/PRODUCT_CARD.DART
+- final entity
+- CTT
+- Column, _ImageView, Text, SizedBox
+//_ImageView
+- final List<String> images
+- CTT
+- if ClipRRect, condicion por si no hay respuesta con imagen
+- return ClipRRect,
+
+
+
+//SCREENS/HYPO_PRODUCT_SCREEN
+- STL, consumer
+- final productId
+- CTT
+- inyectar HYPO_PRODUCT_PROVIDER
+- scaffold, appbar, ## _ProductsView
+## implementar PRODUCT_FORM_PROVIDER
+## implementar aceeso a camara y galleria
+
+
+////PROVIDER/HYPO_PRODUCT_PROVIDER.DART
+//class State copyWith
+- finals id, product, isLoading, isSaving
+- final inyeccion de ProductRepositoy
+- CTT, contructor para String y funcion loadProduct
+//Notifier
+- futura funcion async, carga dee producto
+- Product funcion, aplicar en la funcion anterior para crear el product
+//STNP
+- final wathc.autoDispose.family con String, inyectar repositoryProvider
+
+
+
+
+///FORMS/PRODUCT_FORM_PROVIDER.DART
+- state,
+- Notifier
+- STNP

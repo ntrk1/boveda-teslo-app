@@ -1,0 +1,40 @@
+SHARED.DART
+- export de infrastructure/inpust/inputs.dart
+
+
+INFRASTRUCTURE/SERVICES/KEY_VALUE_STORAGE_SERVICE.DART
+//abstract class
+- futura funcion con key, value
+- futura con key, value
+- futura bool con key
+INFRASTRUCTURE/SERVICES/KEY_VALUE_STORAGE_SERVICE_IMPL.DART
+//class extends
+- futura regresa SharedPreferences async, regresa la instancia
+- complementar overrides get, remove set
+
+
+INFRASTRUCTURE/SERVICES/CAMERA_GALLERY.DART
+- abstract class
+
+INFRASTRUCTURE/SERVICES/CAMERA_GALLERY_IMPL.DART
+- class extends CAMERA_GALLERY
+
+-------------------------------------------------------------------
+
+WIDGETS/SIDE_MENU
+//STFW
+- cambiar a ConsumerStatefulWidget
+- ref read en cerrar sesion
+
+WIDGETS/CUSTOMTEXTFORMFIELD
+- ediciones visuales
+
+
+WIDGETS/FULL_SCREEN_LOADER.DART
+- STL, SizedBox.expand, center, CircularProgresIndicator.adaptive
+
+WIDGETS/CUSTOM_PRODUCT_FIELD.DART
+- copia gitHub
+
+INFRASTRUCTURE/INPUTS/ .DART
+- crear email, password, price, slug, sotck, title

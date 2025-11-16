@@ -1,0 +1,33 @@
+DATASOURCES/REPOSITORIES
+AUTH_DATASOURCE.DART/AUTH_REPOSITORY.DART
+// abstract class
+- futura entity funcion con email, password
+- futura entity funcion con email, password, fullName
+- futura entity funcion con token
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENTITIES/USER.DART
+// class
+- id, email, fullName, roles, token
+- CTT
+
+
+
+
+
+
+DOMAIN.DART
+- barril export

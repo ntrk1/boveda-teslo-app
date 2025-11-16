@@ -1,0 +1,30 @@
+CONSTANTS/ENVIROMENTS.DART
+//class EnvIroment
+- statica futura funcion async, carga el archivo por nombre
+de las variables de entorno
+- statica String, define el nombre de la variable de entorno
+
+
+
+
+
+
+ROUTER/APP_ROUTER.DART
+- añadir provider,
+- final del provider para control de status
+- refreshListenable, inyeccion del provider
+- routes
+## añadir ruta productScreen con pathParams
+- redirect, finals al state.subloc, status del provider
+
+
+
+ROUTER/APP_ROUTER_NOTIFIER.DART
+1//class extends ChangeNotifier
+- final privado, Notifier del provider
+- iterable privado de la enum en provider
+- CTT, addlistener del final
+- get del iterable publico retorne el privado
+
+2//final provider
+- proveedor usado en goRouter

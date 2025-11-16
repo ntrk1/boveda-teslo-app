@@ -1,0 +1,14 @@
+LOGIN_SCREEN
+
+
+//class _LoginForm
+- cambiar a ConsumerWidget
+ - # funcion con context, message, ejecuta snakcbar con texto de error
+- CTT
+- final del provider .watch
+- # ref.listen, condiciona el snackbar recibiendo algun errorMessage
+- CustomTextFormField de login añadir onChanged y errorMessage
+- CustomTextFormField de password añadir onChanged, errorMessage,
+onfilledsubmitted
+- CustomFilledButton añadir provider y funcion al onPressed
+- 

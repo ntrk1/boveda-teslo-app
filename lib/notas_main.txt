@@ -1,0 +1,21 @@
+1// void main
+- definir ProviderScope con RunApp
+- await de enviroments
+- cambiar a consumerWidget para usar goRoute desde Provider
+
+
+
+
+
+//EDITS
+- raiz : crear .env y mencionar en .gitignore
+API_URL=http://192.168.18.3:3000/api
+
+
+
+
+//YAML
+-  añadir flutter_dotenv y en assets -    .env
+ - instalar dio
+- instalar shared_preferences
+- instalar flutter_staggered_grid_view

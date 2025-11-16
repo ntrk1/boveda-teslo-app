@@ -1,0 +1,63 @@
+LOGIN_FORM_PROVIDER.
+1//classState
+- finals : {isPosting, isFormPosted, isValid, email, password}
+- CTT
+- copyWith
+- override toString multilinea
+
+2//classNotifier extends StatNotifier<classState>
+# final callback, dependencia oculta de AUTH_PROVIDER
+I - funcion con String, define valores de newEmail para el state 
+y su validador con copyWith
+II - funcion con String, define valores de newPassword para el state 
+y su validador con copyWith
+III - funcion privada, define valores de password, email desde state.value 
+y su validador con copyWith
+IV - funcion, se ejcuta al acceder 
+## await callback con state.value de email y password
+## copyWith isPosting
+
+
+3//final StateNotifierProvider.autodispose
+- proveedor usado por las pantallas
+# final watch, dependencia oculta de AUTH_PROVIDER
+
+-----------------------------------------------------------------
+
+AUTH_PROVIDER.DART
+1//enum AuthStatus
+- checking, authenticated, notAuthenticated
+
+2//classState
+- finals {authStatus, entity, errorMessage}
+- CTT, checkStatus
+- copyWith
+
+3//classNotifier extends StatNotifier<classState>
+- final repository ## SharedPreferences
+- CTT, ## checkStatus
+- futura funcion con string opcional async, state.copyWith
+con los valores del usuario NO AUTENTICADO
+# # await iyeccion funcion, maneja token del dispositivo
+- funcion privada con entity, state.copyWith
+con los valores del usuario AUTENTICADO
+# # await iyeccion funcion, maneja token del dispositivo
+- futura funcion con email, password async, try-on-catch para acceder
+a la cuenta y controlar errores
+- funcion async, almacena el token, TRY login CATCH logout
+
+4//final StateNotifierProvider
+- final, emparejar por repositoryImpl
+- final, inyectar SharedPreferencesImpl
+
+
+
+
+
+
+
+
+
+
+PROVIDERS.
+- export de LOGIN_FORM_PROVIDER

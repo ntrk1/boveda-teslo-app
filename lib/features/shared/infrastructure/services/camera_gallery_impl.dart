@@ -1,0 +1,34 @@
+
+import 'package:image_picker/image_picker.dart';
+import 'package:teslo_shop/features/shared/infrastructure/services/camera_gallery.dart';
+
+class CameraGalleryImpl extends CameraGallery {
+
+  final ImagePicker _picker = ImagePicker();
+  @override
+  Future<String?> selecPhoto() async {
+    
+    final XFile? photo = await _picker.pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 80,
+      );
+      if (photo == null) return null;
+
+      return photo.path;
+  }
+
+  @override
+  Future<String?> takePhoto() async {
+    
+    final XFile? photo = await _picker.pickImage(
+      source: ImageSource.camera,
+      imageQuality: 80,
+      preferredCameraDevice: CameraDevice.front
+      );
+      if (photo == null) return null;
+
+      return photo.path;
+
+  }
+
+}
